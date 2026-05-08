@@ -1,17 +1,272 @@
 ---
+import "../styles/global.css";
 
+const proyectos = [
+  {
+    nombre: "Bistró La Plaza",
+    tipo: "Gastronomía",
+    descripcion: "Landing page con menú completo, sistema de reservas por formulario, mapa de Google embebido y navbar con efecto scroll.",
+    url: "https://bistro-la-plaza.vercel.app",
+    tags: ["Astro", "Tailwind CSS", "Formspree"],
+    gradiente: "from-amber-950 to-stone-950",
+    borde: "border-amber-800/40",
+    badge: "bg-amber-500/10 text-amber-400 border-amber-500/20",
+    dot: "bg-amber-400",
+  },
+  {
+    nombre: "García & Asociados",
+    tipo: "Servicios profesionales",
+    descripcion: "Landing corporativa con servicios, FAQ accordion nativo, testimonios con estrellas y formulario de consulta.",
+    url: "https://demo-estudio.vercel.app",
+    tags: ["Astro", "Tailwind CSS", "Formspree"],
+    gradiente: "from-blue-950 to-slate-950",
+    borde: "border-blue-800/40",
+    badge: "bg-blue-500/10 text-blue-400 border-blue-500/20",
+    dot: "bg-blue-400",
+  },
+  {
+    nombre: "Flowsync",
+    tipo: "SaaS / Producto digital",
+    descripcion: "Landing para startup tech con mockup de dashboard en CSS puro, pricing table de 3 tiers y captura de emails.",
+    url: "https://demo-saas.vercel.app",
+    tags: ["Astro", "Tailwind CSS", "CSS avanzado"],
+    gradiente: "from-violet-950 to-slate-950",
+    borde: "border-violet-800/40",
+    badge: "bg-violet-500/10 text-violet-400 border-violet-500/20",
+    dot: "bg-violet-400",
+  },
+];
+
+const servicios = [
+  { titulo: "Landing pages", descripcion: "Sitios rápidos, modernos y optimizados para convertir visitantes en clientes.", icono: "⚡" },
+  { titulo: "Sitios corporativos", descripcion: "Para estudios, consultorios, consultoras y todo tipo de servicios B2B.", icono: "🏢" },
+  { titulo: "Automatizaciones", descripcion: "Flujos con Make o n8n que eliminan el trabajo repetitivo de tu negocio.", icono: "🔄" },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thomas Lagrutta · Desarrollador Front-end</title>
+    <meta name="description" content="Desarrollo landing pages y automatizaciones para empresas. Astro, Tailwind CSS, Vercel." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <style>
+      .gradient-name {
+        background: linear-gradient(135deg, #f8fafc, #94a3b8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .dot-pattern {
+        background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+        background-size: 28px 28px;
+      }
+    </style>
+  </head>
+  <body class="bg-zinc-950 text-white" style="font-family: 'Inter', sans-serif;">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-md">
+      <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+        <span class="font-bold text-lg">TL<span class="text-zinc-500">.</span></span>
+        <div class="hidden md:flex items-center gap-8 text-zinc-400">
+          <a href="#proyectos" class="hover:text-white transition text-sm">Proyectos</a>
+          <a href="#servicios" class="hover:text-white transition text-sm">Servicios</a>
+          <a href="#contacto" class="hover:text-white transition text-sm">Contacto</a>
+          <a href="https://www.workana.com/freelancer/e0f658019ea3a2e2fa168a619c66bcc5" target="_blank"
+            class="bg-white hover:bg-zinc-200 transition px-5 py-2 rounded-full text-sm font-semibold text-zinc-900">
+            Contratar en Workana
+          </a>
+        </div>
+        <a href="#contacto" class="md:hidden bg-white text-zinc-900 px-4 py-2 rounded-full text-sm font-semibold">
+          Contacto
+        </a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="dot-pattern min-h-screen flex items-center px-6 pt-20">
+      <div class="max-w-5xl mx-auto w-full py-24">
+		<div class="mb-8">
+		<img
+			src="/images/foto.jpg"
+			alt="Thomas Largutta"
+			class="w-28 h-28 rounded-full object-cover object-top border-2 border-zinc-700 shadow-xl"
+		/>
+		</div>
+        <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm px-4 py-1.5 rounded-full mb-8">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Disponible para proyectos · Buenos Aires, Argentina
+        </div>
+
+        <h1 class="text-7xl md:text-8xl font-extrabold leading-none mb-6 tracking-tight">
+          <span class="gradient-name">Thomas<br/>Lagrutta</span>
+        </h1>
+
+        <p class="text-2xl text-zinc-400 font-medium mb-4 max-w-xl">
+          Desarrollador Front-end especializado en <span class="text-white">landing pages</span> y <span class="text-white">automatizaciones.</span>
+        </p>
+        <p class="text-zinc-600 text-lg mb-12 max-w-xl">
+          Construyo sitios que cargan rápido, se ven profesionales y convierten visitantes en clientes. Con Astro, Tailwind y Vercel.
+        </p>
+
+        <div class="flex gap-4 flex-wrap">
+          <a href="#proyectos"
+            class="bg-white hover:bg-zinc-200 active:scale-95 transition-all px-8 py-4 rounded-full font-semibold text-zinc-900 text-lg">
+            Ver proyectos →
+          </a>
+          <a href="https://www.workana.com/freelancer/e0f658019ea3a2e2fa168a619c66bcc5" target="_blank"
+            class="border border-zinc-700 hover:border-zinc-500 transition px-8 py-4 rounded-full font-medium text-zinc-300">
+            Perfil en Workana
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="py-24 px-6">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-14">
+          <p class="text-zinc-500 text-sm font-semibold uppercase tracking-widest mb-2">Portfolio</p>
+          <h2 class="text-4xl font-bold">Proyectos recientes</h2>
+        </div>
+        <div class="space-y-6">
+          {proyectos.map((p, i) => (
+            <div class={`group rounded-2xl border ${p.borde} bg-zinc-900/50 hover:bg-zinc-900 transition-all duration-300 overflow-hidden`}>
+              <div class="p-8 grid md:grid-cols-[1fr_auto] gap-6 items-start">
+                <div>
+                  <div class="flex items-center gap-3 mb-4">
+                    <span class={`text-xs font-semibold px-3 py-1 rounded-full border ${p.badge}`}>
+                      {p.tipo}
+                    </span>
+                    <span class="text-zinc-700 text-sm">0{i + 1}</span>
+                  </div>
+                  <h3 class="text-2xl font-bold mb-3">{p.nombre}</h3>
+                  <p class="text-zinc-400 leading-relaxed mb-5 max-w-xl">{p.descripcion}</p>
+                  <div class="flex flex-wrap gap-2">
+                    {p.tags.map((tag) => (
+                      <span class="bg-zinc-800 text-zinc-400 text-xs px-3 py-1 rounded-full">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+                <a href={p.url} target="_blank"
+                  class="shrink-0 border border-zinc-700 hover:border-zinc-400 hover:text-white transition text-zinc-400 px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
+                  Ver demo →
+                </a>
+              </div>
+              <!-- Decorative gradient bar -->
+              <div class={`h-1 bg-gradient-to-r ${p.gradiente} opacity-60 group-hover:opacity-100 transition-opacity`}></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-24 px-6 border-t border-zinc-800/50">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-14">
+          <p class="text-zinc-500 text-sm font-semibold uppercase tracking-widest mb-2">Qué hago</p>
+          <h2 class="text-4xl font-bold">Servicios</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {servicios.map((s) => (
+            <div class="bg-zinc-900 border border-zinc-800 hover:border-zinc-600 rounded-2xl p-8 transition-all duration-300">
+              <span class="text-3xl mb-5 block">{s.icono}</span>
+              <h3 class="text-xl font-bold mb-3">{s.titulo}</h3>
+              <p class="text-zinc-400 leading-relaxed">{s.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section class="py-16 px-6 border-t border-zinc-800/50">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-zinc-500 text-sm font-semibold uppercase tracking-widest mb-8">Stack tecnológico</p>
+        <div class="flex flex-wrap gap-3">
+          {["Astro", "Tailwind CSS", "JavaScript", "HTML5", "Vercel", "Git / GitHub", "Formspree", "Make", "n8n"].map((tech) => (
+            <span class="bg-zinc-900 border border-zinc-800 text-zinc-300 px-5 py-2.5 rounded-full text-sm font-medium">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="py-24 px-6 border-t border-zinc-800/50">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-zinc-500 text-sm font-semibold uppercase tracking-widest mb-4">Contacto</p>
+          <h2 class="text-5xl font-bold mb-6 leading-tight">¿Arrancamos<br/>tu proyecto?</h2>
+          <p class="text-zinc-400 text-lg leading-relaxed mb-8">
+            Escribime por Workana o por email. Respondo todas las consultas en menos de 24 horas.
+          </p>
+          <div class="space-y-3">
+            <a href="https://www.workana.com/freelancer/e0f658019ea3a2e2fa168a619c66bcc5" target="_blank"
+              class="flex items-center gap-3 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-600 transition px-6 py-4 rounded-xl group">
+              <div class="w-8 h-8 bg-emerald-500/10 rounded-lg flex items-center justify-center shrink-0">
+                <span class="text-emerald-400 text-sm font-bold">W</span>
+              </div>
+              <div class="flex-1">
+                <p class="font-medium text-sm">Workana</p>
+                <p class="text-zinc-500 text-xs">Enviame un mensaje directo</p>
+              </div>
+              <span class="text-zinc-600 group-hover:text-zinc-400 transition">→</span>
+            </a>
+            <a href="https://github.com/ThomyLagru" target="_blank"
+              class="flex items-center gap-3 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-600 transition px-6 py-4 rounded-xl group">
+              <div class="w-8 h-8 bg-zinc-700/50 rounded-lg flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4 text-zinc-300" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <p class="font-medium text-sm">GitHub</p>
+                <p class="text-zinc-500 text-xs">github.com/ThomyLagru</p>
+              </div>
+              <span class="text-zinc-600 group-hover:text-zinc-400 transition">→</span>
+            </a>
+          </div>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8">
+          <form action="https://formspree.io/f/xgodlogg" method="POST" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-zinc-400 mb-2">Tu nombre</label>
+              <input type="text" name="nombre" required placeholder="Juan García"
+                class="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-zinc-400 mb-2">Email</label>
+              <input type="email" name="email" required placeholder="juan@empresa.com"
+                class="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-zinc-400 mb-2">¿En qué puedo ayudarte?</label>
+              <textarea name="mensaje" rows="4" placeholder="Contame brevemente tu proyecto..."
+                class="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3 text-white placeholder-zinc-600 focus:outline-none focus:border-zinc-500 transition resize-none"></textarea>
+            </div>
+            <button type="submit"
+              class="w-full bg-white hover:bg-zinc-200 active:scale-95 transition-all py-4 rounded-xl font-semibold text-zinc-900">
+              Enviar mensaje →
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-zinc-800/50 py-8 px-6">
+      <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+        <span class="font-bold text-zinc-400">Thomas Lagrutta</span>
+        <p class="text-xs text-zinc-700">© 2026 · Hecho con Astro y Tailwind CSS · Buenos Aires, Argentina</p>
+      </div>
+    </footer>
+
+  </body>
 </html>
