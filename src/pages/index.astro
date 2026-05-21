@@ -4,8 +4,9 @@ import "../styles/global.css";
 const proyectos = [
   {
     nombre: "Bistró La Plaza",
-    tipo: "Gastronomía",
-    descripcion: "Landing page con menú completo, sistema de reservas por formulario, mapa de Google embebido y navbar con efecto scroll.",
+    eyebrow: "Gastronomía · Caso de uso",
+    descripcion: "Los bares y restaurantes pierden reservas cuando no llegan a atender el teléfono en hora pico. Esta landing resuelve el problema con un menú navegable sin scroll infinito, reservas por formulario que llegan directo al mail del dueño, y CTA de WhatsApp siempre visible. Optimizada para mobile, que es por donde entra el 80% del tráfico de un restaurante.",
+    badgeExtra: "⚡ 98/100 PageSpeed · Carga en <1s",
     url: "https://bistro-la-plaza.vercel.app",
     tags: ["Astro", "Tailwind CSS", "Formspree"],
     gradiente: "from-amber-950 to-stone-950",
@@ -15,8 +16,9 @@ const proyectos = [
   },
   {
     nombre: "García & Asociados",
-    tipo: "Servicios profesionales",
-    descripcion: "Landing corporativa con servicios, FAQ accordion nativo, testimonios con estrellas y formulario de consulta.",
+    eyebrow: "Servicios profesionales · Caso de uso",
+    descripcion: "Los estudios y consultoras pierden clientes en la primera visita al sitio: o no se entiende qué hacen, o el formulario está dos clicks abajo. Esta landing pone los servicios al frente, contesta las objeciones más comunes con un FAQ accesible, y deja un solo CTA claro hacia consulta. Sin distracciones, sin animaciones que demoren la carga.",
+    badgeExtra: "📈 Estructura optimizada para conversión",
     url: "https://demo-estudio.vercel.app",
     tags: ["Astro", "Tailwind CSS", "Formspree"],
     gradiente: "from-blue-950 to-slate-950",
@@ -26,8 +28,9 @@ const proyectos = [
   },
   {
     nombre: "Flowsync",
-    tipo: "SaaS / Producto digital",
-    descripcion: "Landing para startup tech con mockup de dashboard en CSS puro, pricing table de 3 tiers y captura de emails.",
+    eyebrow: "SaaS / Producto digital · Caso de uso",
+    descripcion: "Las startups tech tienen el problema opuesto a un bar: explicar un producto abstracto en 5 segundos. Esta landing resuelve eso con un mockup de dashboard hecho 100% en CSS (sin imagen pesada), pricing table que compara los tres tiers de un vistazo, y captura de emails para early access. Cero JavaScript innecesario, lista para escalar tráfico de campañas pagas.",
+    badgeExtra: "🎯 Mockup en CSS puro · 0 dependencias externas",
     url: "https://demo-saas.vercel.app",
     tags: ["Astro", "Tailwind CSS", "CSS avanzado"],
     gradiente: "from-violet-950 to-slate-950",
@@ -140,16 +143,17 @@ const servicios = [
                 <div>
                   <div class="flex items-center gap-3 mb-4">
                     <span class={`text-xs font-semibold px-3 py-1 rounded-full border ${p.badge}`}>
-                      {p.tipo}
+                      {p.eyebrow}
                     </span>
                     <span class="text-zinc-700 text-sm">0{i + 1}</span>
                   </div>
                   <h3 class="text-2xl font-bold mb-3">{p.nombre}</h3>
                   <p class="text-zinc-400 leading-relaxed mb-5 max-w-xl">{p.descripcion}</p>
-                  <div class="flex flex-wrap gap-2">
+                  <div class="flex flex-wrap items-center gap-2">
                     {p.tags.map((tag) => (
                       <span class="bg-zinc-800 text-zinc-400 text-xs px-3 py-1 rounded-full">{tag}</span>
                     ))}
+                    <span class="text-zinc-500 text-xs px-3 py-1 rounded-full border border-zinc-800">{p.badgeExtra}</span>
                   </div>
                 </div>
                 <a href={p.url} target="_blank"
