@@ -50,6 +50,20 @@ const proyectos = [
     badge: "bg-teal-500/10 text-teal-400 border-teal-500/20",
     dot: "bg-teal-400",
   },
+  {
+    nombre: "Kalos",
+    eyebrow: "E-commerce · CMS dinámico",
+    descripcion: "Las tiendas pequeñas pierden tiempo pidiendo cambios al desarrollador cada vez que actualizan un producto. Kalos resuelve esto conectando el sitio directamente a Airtable: el equipo edita una fila, el catálogo se actualiza al instante. Sin redeploys, sin código.",
+    badgeExtra: "⚡ Cambios en Airtable reflejados al instante · Sin redeploys",
+    url: "https://cms-demo-kalos.vercel.app",
+    tags: ["Astro", "Tailwind CSS", "Airtable API", "Vercel SSR"],
+    gradiente: "from-green-950 to-slate-950",
+    borde: "border-green-800/40",
+    badge: "bg-green-500/10 text-green-400 border-green-500/20",
+    dot: "bg-green-400",
+    flujo: ["Airtable", "API", "Sitio web"],
+    features: ["CMS en vivo", "Datos dinámicos", "Filtros por categoría", "Búsqueda en tiempo real"],
+  },
 ];
 
 const servicios = [
@@ -169,6 +183,27 @@ const servicios = [
                     ))}
                     <span class="text-zinc-500 text-xs px-3 py-1 rounded-full border border-zinc-800">{p.badgeExtra}</span>
                   </div>
+                  {/* Mini-diagrama de flujo de datos (solo proyectos que lo definen) */}
+                  {p.flujo && (
+                    <div class="flex items-center gap-2 mt-4 flex-wrap">
+                      <span class="text-zinc-600 text-xs font-medium uppercase tracking-wider">Flujo de datos</span>
+                      <span class="text-zinc-700 text-xs">·</span>
+                      {p.flujo.map((paso, i) => (
+                        <span class="inline-flex items-center gap-1.5">
+                          <span class={`bg-zinc-800 border ${p.borde} text-zinc-300 text-xs px-2.5 py-1 rounded-lg font-mono`}>{paso}</span>
+                          {i < p.flujo.length - 1 && <span class="text-zinc-600 text-xs font-bold">→</span>}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  {/* Badges de funcionalidades clave (solo proyectos que los definen) */}
+                  {p.features && (
+                    <div class="flex flex-wrap gap-1.5 mt-2">
+                      {p.features.map((f) => (
+                        <span class={`text-xs px-2.5 py-1 rounded-lg border ${p.badge} border-opacity-50`}>{f}</span>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <a href={p.url} target="_blank"
                   class="shrink-0 border border-zinc-700 hover:border-zinc-400 hover:text-white transition text-zinc-400 px-6 py-3 rounded-full text-sm font-medium whitespace-nowrap">
