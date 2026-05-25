@@ -61,8 +61,6 @@ const proyectos = [
     borde: "border-green-800/40",
     badge: "bg-green-500/10 text-green-400 border-green-500/20",
     dot: "bg-green-400",
-    flujo: ["Airtable", "API", "Sitio web"],
-    features: ["CMS en vivo", "Datos dinámicos", "Filtros por categoría", "Búsqueda en tiempo real"],
   },
 ];
 
@@ -429,7 +427,7 @@ const servicios = [
       const visitas  = parseInt(sliderVisitas.value)  || 0;
       const ticket   = parseFloat(inputTicket.value)  || 0;
       const actual      = visitas * 0.01 * ticket;
-      const optimizado  = visitas * 0.03 * ticket;
+      const optimizado  = visitas * 0.022 * ticket;
       const diferencia  = optimizado - actual;
       const anual       = diferencia * 12;
 
